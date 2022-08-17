@@ -1,4 +1,4 @@
-import ProductDetailsContainer from "modules/productDetails/container/ProductDetails";
+import ProductDetailsContainer from "modules/productDetails/container/ProductDetailsContainer";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import ProductListContainer from "./modules/productList/container/ProductListContainer";

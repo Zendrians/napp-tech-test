@@ -1,7 +1,9 @@
 import React from "react";
+import ProductListLayout from "../components/ProductListLayout/ProductListLayout";
+
 
 const ProductListContainer = () => {
-  return <div>This is the list container</div>;
+  return <ProductListLayout />;
 };
 
 export default ProductListContainer;

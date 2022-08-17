@@ -1,0 +1,13 @@
+.productList {
+  display: grid;
+  row-gap: 10px;
+  background-color: cadetblue;
+
+  &--showcase {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+}

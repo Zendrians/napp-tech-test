@@ -1,7 +1,8 @@
 import React from "react";
+import ProductDetailsLayout from "../components/ProductDetailsLayout";
 
 const ProductDetailsContainer = () => {
-  return <div>This is the DETAILS container</div>;
+  return <ProductDetailsLayout />;
 };
 
 export default ProductDetailsContainer;
