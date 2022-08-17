@@ -7,7 +7,9 @@ const ProductListLayout = () => {
   return (
     <main className="productListLayout">
       <NavBar />
-      <ProductList />
+      <section className="productListLayout--showcaseSection">
+        <ProductList />
+      </section>
     </main>
   );
 };

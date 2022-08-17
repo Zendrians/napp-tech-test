@@ -1,7 +1,11 @@
 .productList {
   display: grid;
-  row-gap: 10px;
+  row-gap: 30px;
 //   background-color: cadetblue;
+
+    &--searchBox {
+        justify-self: end;
+    }
 
   &--showcase {
     display: grid;

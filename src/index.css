@@ -153,3 +153,12 @@ input[type="reset"] {
   cursor: pointer;
   outline: inherit;
 }
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}

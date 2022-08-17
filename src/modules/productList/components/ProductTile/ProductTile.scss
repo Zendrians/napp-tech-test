@@ -1,4 +1,8 @@
 .productTile {
+  display: grid;
+  grid-template-rows: 260px 24px 16px 1fr;
+  padding: 10px 15px;
+
   width: 300px;
   height: 380px;
   background-color: white;
