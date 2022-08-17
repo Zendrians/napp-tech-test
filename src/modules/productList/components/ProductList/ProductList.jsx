@@ -25,6 +25,7 @@ const ProductList = ({ products }) => {
   };
 
   const generateProductTiles = () => {
+    if (filteredProducts.length === 0) return <div className="productList--empty"></div>
     return filteredProducts.map((prod) => (
       <ProductTile key={prod.id} product={prod} />
     ));
