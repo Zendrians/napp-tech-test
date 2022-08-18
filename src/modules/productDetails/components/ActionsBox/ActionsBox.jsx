@@ -52,8 +52,6 @@ const ActionsBox = ({ prodDetails }) => {
     console.log(productToAdd);
   };
 
-  console.log(colorCode);
-
   return (
     <div className="actionsBox">
       <form className="actionsBox--form">
@@ -77,16 +75,16 @@ const ActionsBox = ({ prodDetails }) => {
             {generateColorBtns()}
           </ToggleButtonGroup>
         </div>
-        <div className="actionsBox--addBtnBox">
-          <Button
-            size="large"
-            variant="outlined"
-            startIcon={<AddShoppingCartIcon />}
-            onClick={handleAddBrt}
-          >
-            Add to Cart
-          </Button>
-        </div>
+
+        <Button
+          size="large"
+          variant="outlined"
+          startIcon={<AddShoppingCartIcon />}
+          onClick={handleAddBrt}
+          className="actionsBox--addBtn"
+        >
+          Add to Cart
+        </Button>
       </form>
     </div>
   );

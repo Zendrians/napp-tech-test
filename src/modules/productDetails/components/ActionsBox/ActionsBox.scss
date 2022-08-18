@@ -18,4 +18,9 @@
     display: grid;
     justify-content: center;
   }
+
+  &--addBtn {
+    width: 300px;
+    justify-self: center;
+  }
 }
