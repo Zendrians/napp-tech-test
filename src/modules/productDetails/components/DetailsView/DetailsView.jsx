@@ -13,7 +13,7 @@ const DetailsView = ({ prodDetails }) => {
       </div>
       <div className="detailsView--panelCol">
         <DescriptionBox prodDetails={prodDetails} />
-        <ActionsBox />
+        <ActionsBox prodDetails={prodDetails} />
       </div>
     </div>
   );

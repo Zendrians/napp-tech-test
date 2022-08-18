@@ -2,9 +2,10 @@ import React from "react";
 import MainSpecTile from "../MainSpecTile/MainSpecTile";
 import MemoryIcon from "@mui/icons-material/Memory";
 // import StorageRoundedIcon from "@mui/icons-material/StorageRounded";
-import AndroidIcon from "@mui/icons-material/Android";
+// import AndroidIcon from "@mui/icons-material/Android";
 import Battery0BarIcon from "@mui/icons-material/Battery0Bar";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
+import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 // import AspectRatioIcon from "@mui/icons-material/AspectRatio";
 // import HdOutlinedIcon from "@mui/icons-material/HdOutlined";
 import "./DescriptionBox.scss";
@@ -39,7 +40,7 @@ const DescriptionBox = ({ prodDetails }) => {
           <span>{cameraDetails(prodDetails.primaryCamera)}</span>
         </MainSpecTile>
         <MainSpecTile>
-          <AndroidIcon />
+          <DeveloperModeIcon />
           <span>{prodDetails.os}</span>
         </MainSpecTile>
         <MainSpecTile>

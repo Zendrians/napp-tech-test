@@ -1,5 +1,16 @@
 .actionsBox {
-  height: 200px;
-  width: 200px;
+  min-width: 500px;
+  max-width: 600px;
   // background-color: darkslateblue;
+
+  &--form {
+    display: grid;
+    grid-template-rows: max-content max-content;
+    row-gap: 20px;
+  }
+
+  &--selectorBox {
+    display: grid;
+    place-content: center;
+  }
 }
