@@ -1,6 +1,8 @@
+import React, { useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import React, { useState } from "react";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import Button from "@mui/material/Button";
 import "./ActionsBox.scss";
 
 const ActionsBox = ({ prodDetails }) => {
@@ -41,6 +43,15 @@ const ActionsBox = ({ prodDetails }) => {
     setColorCode(newValue);
   };
 
+  const handleAddBrt = () => {
+    const productToAdd = {
+      id: prodDetails.id,
+      colorCode: colorCode,
+      storageCode: storageCode,
+    };
+    console.log(productToAdd);
+  };
+
   console.log(colorCode);
 
   return (
@@ -65,6 +76,16 @@ const ActionsBox = ({ prodDetails }) => {
           >
             {generateColorBtns()}
           </ToggleButtonGroup>
+        </div>
+        <div className="actionsBox--addBtnBox">
+          <Button
+            size="large"
+            variant="outlined"
+            startIcon={<AddShoppingCartIcon />}
+            onClick={handleAddBrt}
+          >
+            Add to Cart
+          </Button>
         </div>
       </form>
     </div>

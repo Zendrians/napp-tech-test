@@ -5,12 +5,17 @@
 
   &--form {
     display: grid;
-    grid-template-rows: max-content max-content;
+    grid-template-rows: repeat(3, max-content);
     row-gap: 20px;
   }
 
   &--selectorBox {
     display: grid;
     place-content: center;
+  }
+
+  &--addBtnBox {
+    display: grid;
+    justify-content: center;
   }
 }
