@@ -1,0 +1,11 @@
+@import '../../../../styling//typography.scss';
+
+.mainSpecTile {
+  font-family: $roboto;
+  color: $primary;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 24px 1fr;
+  column-gap: 6px;
+  overflow: hidden;
+}
