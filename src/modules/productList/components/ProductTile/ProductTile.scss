@@ -1,3 +1,5 @@
+@import '../../../../styling/typography.scss';
+
 .productTile {
   display: grid;
   grid-template-rows: 250px 24px 16px 1fr;
@@ -21,12 +23,20 @@
 
   &--model {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 500;
+    font-family: $roboto;
+    color: $primary;
+  }
+
+  &--brand {
+    font-family: $roboto;
+    color: $primary;
   }
 
   &--price {
+    font-family: $roboto;
     font-size: 1.5rem;
-    color: #ff6900;
+    color: $accent;
     font-weight: bold;
     align-self: end;
     justify-self: end;
