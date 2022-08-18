@@ -1,0 +1,9 @@
+.productDetailsLayout {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  row-gap: 30px;
+
+  &--detailsShowcase {
+    justify-self: center;
+  }
+}

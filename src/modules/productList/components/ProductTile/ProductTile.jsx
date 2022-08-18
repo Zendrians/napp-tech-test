@@ -4,7 +4,7 @@ import "./ProductTile.scss";
 
 const ProductTile = ({ product }) => {
   return (
-    <Link to="./details">
+    <Link to={`./details/${product.id}`}>
       <div className="productTile">
         <figure className="productTile--imgBox">
           <img src={product.imgUrl} alt="Phone Photo" />

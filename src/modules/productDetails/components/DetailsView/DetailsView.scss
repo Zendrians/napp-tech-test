@@ -1,0 +1,27 @@
+.detailsView {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+
+  &--imgCol {
+    display: grid;
+    justify-content: end;
+    width: 400px;
+    height: 400px;
+    background-color: coral;
+  }
+
+  &--panelCol {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    row-gap: 30px;
+    width: 400px;
+    background-color: goldenrod;
+  }
+
+  &--imgFigure {
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+  }
+}
