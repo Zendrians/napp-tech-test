@@ -3,12 +3,12 @@ import NavBar from "shared/components/NavBar/NavBar";
 import DetailsView from "../DetailsView/DetailsView";
 import "./ProductDetailsLayout.scss";
 
-const ProductDetailsLayout = () => {
+const ProductDetailsLayout = ({ prodDetails }) => {
   return (
     <main className="productDetailsLayout">
       <NavBar />
       <section className="productDetailsLayout--detailsShowcase">
-        <DetailsView />
+        <DetailsView prodDetails={prodDetails} />
       </section>
     </main>
   );

@@ -1,5 +1,26 @@
 .descriptionBox {
-  height: 200px;
-  width: 200px;
-  background-color: crimson;
+  min-width: 500px;
+
+  &--model {
+    font-size: 3rem;
+    font-family: "Roboto", sans-serif;
+    color: #1c1c1c;
+  }
+
+  &--priceBox {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #ff6900;
+    font-family: "Roboto", sans-serif;
+  }
+
+  &--mainSpecsBox {
+    margin-top: 20px;
+    border-top: 2px solid #b0b0b088;
+    border-bottom: 2px solid #b0b0b088;
+  } 
 }
