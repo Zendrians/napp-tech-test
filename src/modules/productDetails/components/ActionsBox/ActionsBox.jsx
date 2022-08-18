@@ -7,9 +7,22 @@ const ActionsBox = ({ prodDetails }) => {
   const [storageCode, setStorageCode] = useState(
     prodDetails.options.storages[0].code
   );
+  const [colorCode, setColorCode] = useState(
+    prodDetails.options.colors[0].code
+  );
 
   const generateStorageBtns = () => {
     return prodDetails.options.storages.map((option) => {
+      return (
+        <ToggleButton key={option.code} value={option.code}>
+          <span>{option.name}</span>
+        </ToggleButton>
+      );
+    });
+  };
+
+  const generateColorBtns = () => {
+    return prodDetails.options.colors.map((option) => {
       return (
         <ToggleButton key={option.code} value={option.code}>
           <span>{option.name}</span>
@@ -23,7 +36,12 @@ const ActionsBox = ({ prodDetails }) => {
     setStorageCode(newValue);
   };
 
-  console.log(storageCode);
+  const handleChangeColorCode = (event, newValue) => {
+    if (!newValue) return;
+    setColorCode(newValue);
+  };
+
+  console.log(colorCode);
 
   return (
     <div className="actionsBox">
@@ -33,27 +51,19 @@ const ActionsBox = ({ prodDetails }) => {
             value={storageCode}
             exclusive
             onChange={handleChangeStorageCode}
-            aria-label="text alignment"
+            aria-label="Storage Selection"
           >
             {generateStorageBtns()}
           </ToggleButtonGroup>
         </div>
         <div className="actionsBox--selectorBox">
           <ToggleButtonGroup
-            // value={alignment}
+            value={colorCode}
             exclusive
-            // onChange={handleAlignment}
-            aria-label="text alignment"
+            onChange={handleChangeColorCode}
+            aria-label="Color Selection"
           >
-            <ToggleButton value="left" aria-label="left aligned">
-              <span>Option1</span>
-            </ToggleButton>
-            <ToggleButton value="center" aria-label="centered">
-              <span>Option2</span>
-            </ToggleButton>
-            <ToggleButton value="right" aria-label="right aligned">
-              <span>Option3</span>
-            </ToggleButton>
+            {generateColorBtns()}
           </ToggleButtonGroup>
         </div>
       </form>
