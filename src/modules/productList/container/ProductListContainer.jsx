@@ -13,8 +13,11 @@ const ProductListContainer = () => {
       const fetchedProducts = res.data;
       setProducts(fetchedProducts);
     };
-
-    fetchProducts();
+    try {
+      fetchProducts();
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   console.log(products);
