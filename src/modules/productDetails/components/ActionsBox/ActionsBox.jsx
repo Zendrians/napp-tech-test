@@ -4,6 +4,7 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Button from "@mui/material/Button";
 import "./ActionsBox.scss";
+import { postToApi } from "../../../../utils/client/axiosClient";
 
 const ActionsBox = ({ prodDetails }) => {
   const [storageCode, setStorageCode] = useState(
@@ -43,13 +44,17 @@ const ActionsBox = ({ prodDetails }) => {
     setColorCode(newValue);
   };
 
-  const handleAddBrt = () => {
+  const handleAddBtn = async () => {
     const productToAdd = {
       id: prodDetails.id,
       colorCode: colorCode,
       storageCode: storageCode,
     };
-    console.log(productToAdd);
+    const res = await postToApi(
+      "https://front-test-api.herokuapp.com/api/cart",
+      productToAdd
+    );
+    console.log(res.data);
   };
 
   return (
@@ -80,7 +85,7 @@ const ActionsBox = ({ prodDetails }) => {
           size="large"
           variant="outlined"
           startIcon={<AddShoppingCartIcon />}
-          onClick={handleAddBrt}
+          onClick={handleAddBtn}
           className="actionsBox--addBtn"
         >
           Add to Cart
