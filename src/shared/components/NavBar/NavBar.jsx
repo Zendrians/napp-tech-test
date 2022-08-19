@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-// import MUILink from "@mui/material/Link";
 import "./NavBar.scss";
 import { CartContext } from "shared/context/CartContext";
 

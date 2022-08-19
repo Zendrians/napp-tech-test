@@ -1,4 +1,8 @@
 import React, { createContext, useState } from "react";
+import {
+  getFromLocalStorage,
+  setLocalStorage,
+} from "utils/localStorage/localStorageAccess";
 
 export const CartContext = createContext(0);
 export const CartUpdateContext = createContext((num) => {
@@ -6,10 +10,14 @@ export const CartUpdateContext = createContext((num) => {
 });
 
 const CartContextProvider = ({ children }) => {
-  const [cartCount, setCartCount] = useState(3);
+  const [cartCount, setCartCount] = useState(
+    getFromLocalStorage("cartItems") ? getFromLocalStorage("cartItems") : 0
+  );
 
   const handleUpdateCart = (addedItems) => {
-    setCartCount(cartCount + addedItems);
+    const totalCount = cartCount + addedItems;
+    setCartCount(totalCount);
+    setLocalStorage("cartItems", totalCount);
   };
 
   return (
