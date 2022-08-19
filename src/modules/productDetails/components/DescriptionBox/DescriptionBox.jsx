@@ -21,7 +21,7 @@ const DescriptionBox = ({ prodDetails }) => {
       <h5 className="descriptionBox--model">{prodDetails.model}</h5>
       <div className="descriptionBox--priceBox">
         <p className="descriptionBox--price">
-          € {prodDetails.price.toString()}
+          {prodDetails.price ? `€ ${prodDetails.price.toString()}` : "N/A"}
         </p>
         <p>{prodDetails.brand}</p>
       </div>
@@ -68,7 +68,6 @@ const DescriptionBox = ({ prodDetails }) => {
           </div>
         )}
       </div>
-      
     </div>
   );
 };
