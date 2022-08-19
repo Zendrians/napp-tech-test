@@ -1,4 +1,39 @@
+@import "../../../styling/typography.scss";
+
 .navBar {
-    height: 50px;
-    background-color: black;
+  height: 60px;
+  background-color: black;
+
+  &--navBox {
+    margin: auto;
+    display: grid;
+    padding-top: 8px;
+    grid-template-columns: 180px 1fr 100px;
+    max-width: 1300px;
+    min-width: 200px;
+  }
+
+  &--cartBox {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 10px;
+    place-content: center;
+    place-items: center;
+  }
+
+//   &--breadCrumbsBox {
+
+//   }
+
+  &--cartQuantity {
+    display: grid;
+    place-content: center;
+    font-family: $roboto;
+    font-weight: bold;
+    height: 24px;
+    width: 24px;
+    border-radius: 12px;
+    color: white;
+    background-color: $accent;
+  }
 }
