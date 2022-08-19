@@ -7,7 +7,7 @@
   &--navBox {
     margin: auto;
     display: grid;
-    padding-top: 8px;
+    padding: 8px 10px 0;
     grid-template-columns: 180px 1fr 100px;
     max-width: 1300px;
     min-width: 200px;
@@ -21,9 +21,19 @@
     place-items: center;
   }
 
-//   &--breadCrumbsBox {
+  &--breadCrumbsBox {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
 
-//   }
+  &--customLink {
+    color: white;
+    text-transform: capitalize;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
   &--cartQuantity {
     display: grid;

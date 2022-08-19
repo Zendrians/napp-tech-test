@@ -20,8 +20,6 @@ const ProductListContainer = () => {
     }
   }, []);
 
-  console.log(products);
-
   return <ProductListLayout products={products} />;
 };
 

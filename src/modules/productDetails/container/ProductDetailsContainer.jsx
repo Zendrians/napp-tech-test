@@ -22,8 +22,6 @@ const ProductDetailsContainer = () => {
     }
   }, []);
 
-  console.log(prodDetails);
-
   if (!prodDetails) return <div></div>;
 
   return <ProductDetailsLayout prodDetails={prodDetails} />;
