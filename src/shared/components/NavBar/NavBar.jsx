@@ -1,13 +1,15 @@
 import IpsumLogo from "assets/reactSvg/ipsumLogo";
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 // import MUILink from "@mui/material/Link";
 import "./NavBar.scss";
+import { CartContext } from "shared/context/CartContext";
 
 const NavBar = () => {
+  const cartCount = useContext(CartContext);
   const { pathname } = useLocation();
   const pathArr = pathname.split("/").filter((x) => x);
 
@@ -55,7 +57,7 @@ const NavBar = () => {
             fontSize="large"
             style={{ color: "#ff6900" }}
           />
-          <span className="navBar--cartQuantity">0</span>
+          <span className="navBar--cartQuantity">{cartCount}</span>
         </div>
       </div>
     </nav>

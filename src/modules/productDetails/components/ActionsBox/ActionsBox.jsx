@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Button from "@mui/material/Button";
 import "./ActionsBox.scss";
 import { postToApi } from "../../../../utils/client/axiosClient";
+import { CartUpdateContext } from "shared/context/CartContext";
 
 const ActionsBox = ({ prodDetails }) => {
+  const updateCart = useContext(CartUpdateContext);
   const [storageCode, setStorageCode] = useState(
     prodDetails.options.storages[0].code
   );
@@ -50,11 +52,15 @@ const ActionsBox = ({ prodDetails }) => {
       colorCode: colorCode,
       storageCode: storageCode,
     };
-    const res = await postToApi(
-      "https://front-test-api.herokuapp.com/api/cart",
-      productToAdd
-    );
-    console.log(res.data);
+    try {
+      const res = await postToApi(
+        "https://front-test-api.herokuapp.com/api/cart",
+        productToAdd
+      );
+      updateCart(res.data.count);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
