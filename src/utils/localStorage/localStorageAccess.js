@@ -15,7 +15,6 @@ export function cacheApiData(key, data) {
 }
 
 function isDataExpired(dataTimestamp) {
-  console.log(new Date().getTime(), dataTimestamp + 1000 * 60 * 60);
   if (new Date().getTime() > dataTimestamp + 1000 * 60 * 60) return true;
   return false;
 }
