@@ -8,6 +8,7 @@ import ProductListLayout from "../components/ProductListLayout/ProductListLayout
 
 const ProductListContainer = () => {
   const [products, setProducts] = useState([]);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -27,10 +28,12 @@ const ProductListContainer = () => {
         fetchProducts();
       }
     } catch (error) {
-      console.log(error);
+      setIsError(true);
     }
   }, []);
 
+  if (isError) return <div>An error ocurred</div>;
+  
   return <ProductListLayout products={products} />;
 };
 

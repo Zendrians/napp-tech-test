@@ -9,6 +9,7 @@ import ProductDetailsLayout from "../components/ProductDetailsLayout/ProductDeta
 
 const ProductDetailsContainer = () => {
   const [prodDetails, setProdDetails] = useState(null);
+  const [isError, setIsError] = useState(false);
   let { id } = useParams();
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const ProductDetailsContainer = () => {
       setProdDetails(fetechedProdDetails);
       cacheApiData(fetechedProdDetails.id, fetechedProdDetails);
     };
-    
+
     try {
       const cachedData = getValidatedCache(id);
       if (cachedData) {
@@ -29,10 +30,11 @@ const ProductDetailsContainer = () => {
         fetchProduct();
       }
     } catch (error) {
-      console.log(error);
+      setIsError(true);
     }
   }, []);
 
+  if (isError) return <div>An error ocurred</div>;
   if (!prodDetails) return <div></div>;
 
   return <ProductDetailsLayout prodDetails={prodDetails} />;
