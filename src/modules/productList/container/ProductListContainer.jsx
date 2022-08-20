@@ -1,5 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import {
+  cacheApiData,
+  getValidatedCache,
+} from "utils/localStorage/localStorageAccess";
 import ProductListLayout from "../components/ProductListLayout/ProductListLayout";
 
 const ProductListContainer = () => {
@@ -12,9 +16,16 @@ const ProductListContainer = () => {
       );
       const fetchedProducts = res.data;
       setProducts(fetchedProducts);
+      cacheApiData("prodList", fetchedProducts);
     };
+
     try {
-      fetchProducts();
+      const cachedData = getValidatedCache("prodList");
+      if (cachedData) {
+        setProducts(cachedData);
+      } else {
+        fetchProducts();
+      }
     } catch (error) {
       console.log(error);
     }

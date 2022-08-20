@@ -1,6 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {
+  cacheApiData,
+  getValidatedCache,
+} from "utils/localStorage/localStorageAccess";
 import ProductDetailsLayout from "../components/ProductDetailsLayout/ProductDetailsLayout";
 
 const ProductDetailsContainer = () => {
@@ -14,9 +18,16 @@ const ProductDetailsContainer = () => {
       );
       const fetechedProdDetails = res.data;
       setProdDetails(fetechedProdDetails);
+      cacheApiData(fetechedProdDetails.id, fetechedProdDetails);
     };
+    
     try {
-      fetchProduct();
+      const cachedData = getValidatedCache(id);
+      if (cachedData) {
+        setProdDetails(cachedData);
+      } else {
+        fetchProduct();
+      }
     } catch (error) {
       console.log(error);
     }
