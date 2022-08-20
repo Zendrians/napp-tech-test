@@ -1,6 +1,6 @@
-# **Prueba técnica Napptilus**
+# **Prueba Técnica Napptilus**
 
-Prueba técnica para Napptilus en la que se crea una mini-aplicación para comprar dispositivos móviles
+Prueba técnica para Napptilus en la que se crea una mini-aplicación para comprar dispositivos móviles.
 ## **Cómo Ejecutar la Prueba?**
 
 La aplicación se ha generado utilizando Create React App como base, por tanto se necesita `Node.js` para ejecutarla. En mi caso utilize la version `v16.14.0` de Node.
