@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ActionsBox from "../ActionsBox/ActionsBox";
 import DescriptionBox from "../DescriptionBox/DescriptionBox";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import "./DetailsView.scss";
 
 const DetailsView = ({ prodDetails }) => {
@@ -8,7 +10,16 @@ const DetailsView = ({ prodDetails }) => {
     <div className="detailsView">
       <div className="detailsView--imgCol">
         <figure className="detailsView--imgFigure">
-          <img className="detailsView--img" src={prodDetails.imgUrl} alt="Phone Photo" />
+          <Link to="/">
+            <span className="detailsView--backLink">
+              <ArrowBackIosIcon fontSize="small" /> Back to List
+            </span>
+          </Link>
+          <img
+            className="detailsView--img"
+            src={prodDetails.imgUrl}
+            alt="Phone Photo"
+          />
         </figure>
       </div>
       <div className="detailsView--panelCol">
